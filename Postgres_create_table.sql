@@ -1,5 +1,5 @@
 /* Create table for MUDData */
-CREATE TABLE public."MUDData"
+CREATE TABLE public."muddata"
 (
     "Serial_No" character varying(50) NOT NULL,
     "Mfg_date" date NOT NULL,
@@ -27,31 +27,26 @@ CREATE TABLE public."MUDData"
 
 
 /* Create the Sales information table */
-CREATE TABLE public."Sales_info"
+CREATE TABLE public."salesinfo"
 (
     "ID" serial NOT NULL,
     "IPC_Serial_No" character varying(50) NOT NULL,
-    "Sell_date" character varying NOT NULL,
+    "Sell_Date" character varying NOT NULL,
     "Sell_Price_EUR" money NOT NULL,
     "Country" character(2) NOT NULL,
-    PRIMARY KEY ("ID"),
-    FOREIGN KEY ("IPC_Serial_No")
-        REFERENCES public."MUDData" ("Serial_No") MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
-        NOT VALID
+    PRIMARY KEY ("ID")
 );
 
-ALTER TABLE IF EXISTS public."Sales_info"
+ALTER TABLE IF EXISTS public."Salesinfo"
     OWNER to postgres;
 
 
 /* Create table for CMAT Codes */
-CREATE TABLE public."CMAT_codes"
+CREATE TABLE public."cmatcodes"
 (
-    "CMAT_Code" character varying(20) NOT NULL,
-    "CMAT_Description" character varying(50),
-    PRIMARY KEY ("CMAT_Code")
+    "Code" character varying(20) NOT NULL,
+    "Description" character varying(50),
+    PRIMARY KEY ("Code")
 );
 
 

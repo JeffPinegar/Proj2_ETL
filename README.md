@@ -16,7 +16,7 @@ challenges requiring additional transformations, so keeping the load separate wi
 properly transformed.
 <br>
 <br>
-<h4>Clean_Sales_Data</h4>
+<h4>Clean_Sales_Data.ipynb</h4>
 This jupyter notebook reads the data and transforms it. The Transformations include eliminating columns, renaming columns, 
 converting sales data from a string to a float, and changing sales date information to a datetime. After this transformation,
 the data is written out into a clean CSV file.
@@ -25,16 +25,16 @@ The most challenging portion of this was the sales price information. It was con
 The transformation requires cleaning the strings, converting them to floats, and then using a currency library to do the currency conversion.  
 The conversion is performed using the exchange rate on the day of the sale. With over 8,000 transactions, this took about 9 minutes.
 <br><br>
-<h4>Clean_mfg_data</h4>
+<h4>Clean_mfg_data.ipynb</h4>
 This jupyter notebook reads in the data and transforms it. The transformation includes eliminating columns, renaming columns, 
 converting sales data from a string to a float, and changing sales date information to a datetime. After this transformation,
 the data is written into a clean CSV file.
 <br><br>
 <h4>Postgres_create_table.sql</h4>
-This file contains the SQL used to construct the table where the data will be loaded following the transformation.
+This SQL file contains the SQL used to construct the table where the data will be loaded following the transformation.
 <br><br>
-<h4>Load_Prostrgess_database</h4>
-This file contains the code for loading the Postgres database. This is done in three steps. (1) Reading in the cleaned file,
+<h4>Load_Prostrgess_database.ipynb</h4>
+This jupyter notebook contains the code for loading the Postgres database. This is done in three steps. (1) Reading in the cleaned file,
 (2) Opening the connections to the database. (3) Loading the data into the database. In addition to the transformed 
 sales and manufacturing data, a third CSV file was also loaded. This file can be used to change CMAT codes to English.
 <br><br>
